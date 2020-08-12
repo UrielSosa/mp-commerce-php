@@ -139,6 +139,7 @@
                                             <?php echo "$" . $_POST['unit'] ?>
                                         </h3>
                                     </div>
+                                    <a href="<?php echo $preference->init_point; ?>" data-elements-color="#81ecec">Pagar con Mercado Pago</a>
                                     <form action="/procesar-pago" method="POST">
                                       <script
                                        src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
