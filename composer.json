@@ -1,5 +1,13 @@
 {
-    "name": "mp-ecommerce-php",
-    "type": "project",
-    "require": {}
+    "name": "uriel/mp-ecommerce-php",
+    "description": "This is a project made in php with the API of mercadopago",
+    "authors": [
+        {
+            "name": "Uriel Sosa",
+            "email": "sosa.uriel1999@gmail.com"
+        }
+    ],
+    "require": {
+        "mercadopago/dx-php": "^2.1"
+    }
 }
