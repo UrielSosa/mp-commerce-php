@@ -1,5 +1,5 @@
 <?php 
-    require_once 'MercadoPagoController.php';
+    require_once 'controllers/MercadoPagoController.php';
 ?>
 
 
