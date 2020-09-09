@@ -39,9 +39,8 @@ function url($element){
         }
         $url = $protocol . $host . $relativeUri . $element;
     } else {
-        $url = $protocol . $host . '/' . $element;
+        $url = $protocol . $host . $element;
     }
-    dd($url);
     return $url;
 }
 

@@ -53,11 +53,23 @@
     );
 
     $preference->back_urls = array(
-      "success" => "http://localhost/mp-ecommerce-php/index.php",
-      "failure" => "http://localhost/mp-ecommerce-php/index.php",
-      "pending" => "http://localhost/mp-ecommerce-php/index.php"
+      "success" => url('/index.php'),
+      "failure" => url('/index.php'),
+      "pending" => url('/index.php')
     );
+    
     $preference->auto_return = "approved";
+    
+    $preference->date_create = date(DATE_ATOM);
+    
+    $preference->external_reference = "sosa.uriel1999@gmail.com";
+    
+    $preference->notification_url = "https://urielsosa-mp-commerce-php.herokuapp.com/notifications.php?source_news=webhooks";
+    
+    $preference->expires = true;    
+    $preference->expiration_date_from = date(DATE_ATOM);
+    $preference->expiration_date_to = date(DATE_ATOM, strtotime(date(DATE_ATOM)."+ 1 month"));
+
     $preference->save();
 
 ?>

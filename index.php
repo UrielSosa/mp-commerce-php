@@ -1,9 +1,5 @@
 <?php
     require_once 'controllers/helper.php';
-    if ($_GET !== []) {
-        dd($_GET);
-    }
-
 ?>
 
 <!DOCTYPE html>
@@ -20,6 +16,7 @@
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
     crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/category-landing.css" media="screen, print">
 
     <link rel="stylesheet" href="./assets/category.css" media="screen, print">
@@ -95,8 +92,20 @@
 
 
                                 </div>
-
                             </div>
+                            <?php if ($_GET !== []) {
+                                    switch ($_GET['collection_status']) {
+                                        case 'pending':
+                                            echo "<div class='as-accessories-filter-tile column large-12 small-6 bg-warning' style='text-align: center'>Su pago está pendiente</div>";
+                                            break;
+                                        case 'approved':
+                                            echo "<div class='as-accessories-filter-tile column large-12 small-6 bg-success' style='text-align: center'><h2>Su pago se hizo correctamente</h2>";
+                                            echo "<div><p>Payment Method:" . $_GET["payment_type"] . "</p><p>External Reference:" . $_GET["external_reference"] . "</p><p>Payment ID:" . $_GET["collection_id"] . "</p></div></div></div>";
+                                            break;
+                                        default:
+                                            break;
+                                    }
+                            } ?>
                         </div>
                         <div class="as-accessories-results  as-search-desktop">
                             <div class="column as-search-filters" aria-hidden="false" id="as-search-filters" style="position: relative;">
